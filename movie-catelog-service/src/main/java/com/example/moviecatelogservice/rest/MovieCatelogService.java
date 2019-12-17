@@ -25,7 +25,7 @@ public class MovieCatelogService {
 
         MovieListResponse movieList = webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8280/movies/all")
+                .uri("http://MOVIE-INFO-SERVICE/movies/all")
                 .retrieve()
                 .bodyToMono(MovieListResponse.class)
                 .block();
@@ -40,7 +40,7 @@ public class MovieCatelogService {
                 response = webClientBuilder
                         .build()
                         .get()
-                        .uri("http://localhost:8380/movie/rating/"+value.getId())
+                        .uri("http://RATING-SERVICE/movie/rating/"+value.getId())
                         .retrieve()
                         .bodyToMono(RatingResponse.class)
                         .block();
